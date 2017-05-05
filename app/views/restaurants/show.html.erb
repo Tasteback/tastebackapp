@@ -1,0 +1,11 @@
+<h1><%= @restaurant.name %></h1>
+
+<ul>
+<li>Cuisine: <%= @restaurant.cuisine %></li>
+<li>Address: <%= @restaurant.address %></li>
+<li>Area: <%= @restaurant.area %></li>
+<li>Price Range: <%= @restaurant.price_range %></li>
+<li>Hours: <%= @restaurant.hours %></li>
+<li>Phone Number: <%= @restaurant.phone_number%></li>
+<li><%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %></li>
+</ul>
