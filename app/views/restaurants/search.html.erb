@@ -1,0 +1,9 @@
+<%= form_tag({controller: "restaurants", action: "search_results"}, {method: "get"}) do %>
+  <% @allergies.each do |a| %>
+    <%= check_box_tag "allergies[]", a.id, false, id: a.name %>
+    <%= label_tag "allergies[]", a.name.capitalize, for: a.name %>
+  <% end %>
+
+  <%= submit_tag "Find" %>
+
+<% end %>
