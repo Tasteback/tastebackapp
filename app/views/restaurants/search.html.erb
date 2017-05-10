@@ -1,4 +1,11 @@
 <%= form_tag({controller: "restaurants", action: "search_results"}, {method: "get"}) do %>
+  <%= label_tag :location, "Address or Zip Code" %>
+  <%= text_field_tag :location %>
+  <br>
+<%= label_tag :distance, "How far? (miles)" %>
+  <%= text_field_tag :distance %>
+   <br>
+
   <% @allergies.each do |a| %>
     <%= check_box_tag "allergies[]", a.id, false, id: a.name %>
     <%= label_tag "allergies[]", a.name.capitalize, for: a.name %>

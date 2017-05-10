@@ -9,3 +9,14 @@
 <li>Phone Number: <%= @restaurant.phone_number%></li>
 <li><%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %></li>
 </ul>
+
+<% @dishes.each do |d| %>
+  <h2><%= d.name %></h2>
+  <p>Accomodates the following food restrictions:</p>
+  <% d.dish_allergies.each do |da| %>
+    <%= da.allergy.name %>
+    <% if da.modification %>
+    <p>Modification needed: <%= da.modification.description %></p>
+    <% end %>
+  <% end %>
+<% end %>

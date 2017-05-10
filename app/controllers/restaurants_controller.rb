@@ -13,15 +13,20 @@ class RestaurantsController < ApplicationController
     @restaurants = []
     @dishes.each do |d|
       @restaurants << d.restaurant
-    end
+    end 
+    dish_ids = @dishes.map { |d| d.id }
+    session[:dishes] = dish_ids
+    @restaurants = @restaurants.near(params[:location], params[:distance])
   end
   def show
     @restaurant = Restaurant.find(params[:id])
+    @dishes = Dish.where(id: session[:dishes])
+    @dishes = @dishes.restaurant(@restaurant.id)
   end
 
   private
   def search_params
-    params.permit(:zip_code, :allergies => [])
+    params.permit(:location, :distance, :allergies => [])
   end
 end
 
