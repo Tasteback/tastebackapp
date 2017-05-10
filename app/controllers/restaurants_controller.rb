@@ -10,10 +10,8 @@ class RestaurantsController < ApplicationController
     if search_params[:allergies] 
         @dishes = @dishes.includes_allergies(search_params[:allergies]) if search_params[:allergies].any?
     end
-    @restaurants = []
-    @dishes.each do |d|
-      @restaurants << d.restaurant
-    end 
+    restaurant_ids = @dishes.map { |d| d.restaurant.id }
+    @restaurants = Restaurant.where(id: restaurant_ids)
     dish_ids = @dishes.map { |d| d.id }
     session[:dishes] = dish_ids
     @restaurants = @restaurants.near(params[:location], params[:distance])

@@ -1,3 +1,5 @@
 <% @restaurants.each do |r| %>
   <%= link_to r.name, r %>
+  (<%= r.distance.round(2) %> miles)
+  <br>
 <% end %>
