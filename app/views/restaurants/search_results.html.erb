@@ -1,5 +1,7 @@
 <% @restaurants.each do |r| %>
   <%= link_to r.name, r %>
-  (<%= r.distance.round(2) %> miles)
+  <% if @geo %>
+    (<%= r.distance.round(2) %> miles)
+  <% end %>
   <br>
 <% end %>

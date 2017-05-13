@@ -1,16 +1,42 @@
+<div class="cover-background">
+<div class="container">
+<div class="row">
+<div class="col-md-3"></div>
+<div class="welcome-wrapper col-md-6">
+<h3>We are dedicated to providing dining options to people with dietary restrictions.</h3>
+</div>
+<div class="col-md-3"></div>
+</div>
+<div class="row search-form-row">
+<div class="col-md-3"></div>
+<div class="col-md-6 search-form-wrapper">
+<div class="search-form">
 <%= form_tag({controller: "restaurants", action: "search_results"}, {method: "get"}) do %>
-  <%= label_tag :location, "Address or Zip Code" %>
-  <%= text_field_tag :location %>
-  <br>
-<%= label_tag :distance, "How far? (miles)" %>
-  <%= text_field_tag :distance %>
-   <br>
-
+  <div class="row">
+    <div class="location col-md-8">
+      <%= text_field_tag :location, nil, {class: "location-field", placeholder: "Address or Zip Code"} %>
+    </div>
+    <div class="distance col-md-4">
+      <%= text_field_tag :distance, nil, {class: "distance-field", placeholder: "How far? (miles)"} %>
+     </div>
+   </div>
+  
+  <div class="allergies-wrapper">
   <% @allergies.each do |a| %>
-    <%= check_box_tag "allergies[]", a.id, false, id: a.name %>
-    <%= label_tag "allergies[]", a.name.capitalize, for: a.name %>
+  <div class="allergy-select">
+    <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden"} %>
+    <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
+  </div>
   <% end %>
+  </div>
 
-  <%= submit_tag "Find" %>
+  <%= submit_tag "Find", class: "btn btn-large submit-btn"%>
 
 <% end %>
+</div>
+</div>
+<div class="col-md-3"></div>
+</div>
+
+</div>
+</div>
