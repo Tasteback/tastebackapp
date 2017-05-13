@@ -1,7 +1,22 @@
+<div class="container">
 <% @restaurants.each do |r| %>
-  <%= link_to r.name, r %>
-  <% if @geo %>
-    (<%= r.distance.round(2) %> miles)
-  <% end %>
-  <br>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="restaurant-item col-md-10">
+      <div class="col-md-6 restaurant-item-name">
+      <span><%= link_to r.name, r %></span> <br>
+      <%= r.price_range%> • <%= r.cuisine %>
+      </div>
+      <div class="col-md-6 restaurant-item-area">
+      <% if @geo %>
+        <%= r.distance.round(2) %> miles away <br>
+      <% end %>
+      <%= r.area %><br>
+      <%= r.address %><br>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 <% end %>
+
+</div>

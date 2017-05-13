@@ -86,7 +86,7 @@
       display: inline-block;
     }
     input[type="checkbox"] + label {
-      color: #555;
+      color: $gray;
       background-color: #FFF;
     }
     input[type="checkbox"]:checked + label {
@@ -100,5 +100,18 @@
       text-shadow: none;
       border: none;
     }
+  }
+}
+.restaurant-item {
+  border-bottom: 1px solid $gray-lighter;
+  padding: 20px;
+  line-height: 1.8em;
+  .restaurant-item-name {
+    a {
+      color: $brand-primary;
+    }
+  }
+  .restaurant-item-area {
+    text-align: right;
   }
 }
