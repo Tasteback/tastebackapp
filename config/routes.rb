@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show]
 
+  match '/contacts', to: 'contacts#new', via: 'get'
+
+  resources "contacts", only: [:new, :create]
+
 end

@@ -10,6 +10,7 @@
   
   <body>
   <nav>
+  <div class="container">
     <div class="row">
     <div class="col-md-8">
       <%= link_to image_tag("rainbow-slogan.png", class: "logo"), root_path %>
@@ -17,10 +18,21 @@
     <div class="col-md-4 nav-links">
       <ul>
         <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contacts_path %></li>
       </ul>
     </div>
     </div>
+    </div>
   </nav>
+  <% if !flash.empty? %>
+  <div id="flash">
+  <% flash.each do |k, v| %>
+    <div class="flash-<%= k %>">
+      <span class="flash-text"><%= v %></span>
+    </div>
+  <% end %>
+  </div>
+<% end %>
     <%= yield %>
   </body>
 </html>
