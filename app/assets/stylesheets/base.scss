@@ -1,6 +1,24 @@
 nav {
   padding: 10px;
   height: 100px;
+  .nav-links {
+    margin-top: 30px;
+  }
+    ul {
+      li {
+
+        display: inline-block;
+        a {
+           color: $gray-dark;
+          
+        }
+
+        a:hover {
+           text-decoration: none;
+           color: darken($gray-dark, 40%);
+        }
+      }
+    }
 }
 
 .logo {

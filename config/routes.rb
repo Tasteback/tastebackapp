@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'results', to: 'restaurants#search_results'
 
+  get 'about', to: 'static_pages#about', as: :about
+
   resources :restaurants, only: [:show]
 
 end
