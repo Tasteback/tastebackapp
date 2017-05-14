@@ -1,0 +1,33 @@
+ .restaurant-info {
+  margin-top: 30px; 
+  .restaurant-area {
+    text-align: right;
+    .restaurant-address {
+      font-weight: bold;
+    }
+  }
+}
+
+.dishes-heading {
+  color: $brand-primary;
+  font-weight: bold;
+}
+
+.restaurant-contact {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.dishes-container {
+  .dish {
+    padding: 20px;
+    border-bottom: 1px solid $gray-lighter;
+      .allergen {
+        .allergen-name {
+          h5 {
+          font-weight: bold;
+        }
+        }
+      }
+  }
+}

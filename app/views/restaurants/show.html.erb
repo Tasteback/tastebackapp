@@ -1,22 +1,51 @@
+<div class="container">
+<div class="row">
 <h1><%= @restaurant.name %></h1>
+</div>
+<div class="row restaurant-info">
+  <div class="col-md-10">
+  <div class="col-md-6 restaurant-details"><%= @restaurant.price_range %> • <%= @restaurant.cuisine %>
+  </div>
+  <div class="col-md-6">
+  <div class="restaurant-area">
+    <span class="restaurant-address"><%= @restaurant.address %></span><br>
+    <%= @restaurant.area %><br>
+    <%= @restaurant.hours %>
+  </div>
+  <div class="restaurant-contact">
+    <%= @restaurant.phone_number%><br>
+    <%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 
-<ul>
-<li>Cuisine: <%= @restaurant.cuisine %></li>
-<li>Address: <%= @restaurant.address %></li>
-<li>Area: <%= @restaurant.area %></li>
-<li>Price Range: <%= @restaurant.price_range %></li>
-<li>Hours: <%= @restaurant.hours %></li>
-<li>Phone Number: <%= @restaurant.phone_number%></li>
-<li><%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %></li>
-</ul>
-
+<div class="row">
+<div class="dishes-container col-md-10">
+<span class="dishes-heading"><h3>Dishes</h3></span>
 <% @dishes.each do |d| %>
-  <h2><%= d.name %></h2>
-  <p>Accomodates the following food restrictions:</p>
-  <% d.dish_allergies.each do |da| %>
-    <%= da.allergy.name %>
-    <% if da.modification %>
-    <p>Modification needed: <%= da.modification.description %></p>
+  <div class="dish row">
+    <h4><%= d.name %></h4>
+    <p>Accomodates the following food restrictions:</p>
+    
+    
+    <% d.dish_allergies.each do |da| %>
+      <div class="row">
+      <div class="col-md-1"></div>
+      <div class="allergen col-md-10">
+        <span class="allergen-name"><h5><%= da.allergy.name.capitalize %></h5></span>
+        <% if da.modification %>
+        <p>Modification: <%= da.modification.description %></p>
+      </div>
+      <div class="col-md-1"></div>
+      </div>
     <% end %>
+    
+    
   <% end %>
+  </div>
 <% end %>
+</div>
+</div>
+</div>

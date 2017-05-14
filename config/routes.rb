@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get 'results', to: 'restaurants#search_results'
 
-  resources :restaurants, only: [:index, :show]
+  resources :restaurants, only: [:show]
 
 end
