@@ -1,0 +1,70 @@
+.user-form {
+    margin-left: auto;
+    margin-right: auto; 
+
+    form {
+      margin-top: 20px;
+      
+      .btn {
+        background-color: $brand-primary;
+        color: #FFF;
+        margin-bottom: 10px;
+        padding: 10px;  
+        box-shadow: none;
+        background-image: none;
+        text-shadow: none;
+        border: none;
+      }
+    }
+
+    .field {
+        display: block;
+        margin: 20px 0;
+        input[type="email"], input[type="password"]  {
+          width: 80%;
+           height: 2em;
+           padding-left: 10px; 
+          padding-right: 5px;
+          border-radius: 2px;
+          border: 1px solid #C5C5C5;
+        }
+        textarea {
+          border-radius: 2px;
+          border: 1px solid #C5C5C5;
+          width: 80%;
+          resize: none;
+        }
+        label {
+          margin-right: 10px;
+        }
+    }
+    .allergies-wrapper {
+    display: block;
+    margin: 20px 0;
+    text-align: left;
+    .hidden {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+    }
+    .allergy-select {
+      margin: 10px 10px 10px 0;
+      display: inline-block;
+    }
+    input[type="checkbox"] + label {
+      color: $gray;
+      background-color: #FFF;
+    }
+    input[type="checkbox"]:checked + label {
+      color: #FFF;
+      background-color: $brand-primary;
+    }
+    .btn {
+      padding: 12px;
+      box-shadow: none;
+      background-image: none;
+      text-shadow: none;
+      border: none;
+    }
+  }
+}

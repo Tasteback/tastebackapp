@@ -17,7 +17,7 @@
       <%= text_field_tag :location, nil, {class: "location-field", placeholder: "Address or Zip Code"} %>
     </div>
     <div class="distance col-md-4">
-      <%= text_field_tag :distance, nil, {class: "distance-field", placeholder: "How far? (miles)"} %>
+      <%= text_field_tag :distance, nil, {class: "distance-field", placeholder: "Distance (miles)"} %>
      </div>
    </div>
   
@@ -27,6 +27,10 @@
     <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden"} %>
     <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
   </div>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= check_box_tag "user_allergies", true, false, {id: "user_allergies", class: "hidden"} %>
+    <%= label_tag "user_allergies", "Use my allergies", {for: "user_allergies", class: "btn btn-default"}%>
   <% end %>
   </div>
 

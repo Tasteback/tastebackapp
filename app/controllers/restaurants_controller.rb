@@ -18,6 +18,8 @@ class RestaurantsController < ApplicationController
      @restaurants = @restaurants.near(params[:location], params[:distance]) 
      @geo = true
     end
+
+    #user_allergies thing
   end
   def show
     @restaurant = Restaurant.find(params[:id])
@@ -31,7 +33,7 @@ class RestaurantsController < ApplicationController
 
   private
   def search_params
-    params.permit(:location, :distance, :allergies => [])
+    params.permit(:location, :distance, :user_allergies, :allergies => [])
   end
 end
 
