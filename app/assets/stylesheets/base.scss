@@ -1,8 +1,13 @@
-nav {
+.navbar {
   padding: 10px 0 10px 10px;
   height: 100px;
+  margin-bottom: 0;
+  background-image: none;
+  background-color: #FFF;
+  box-shadow: none;
+  border-bottom: none;
   .nav-links {
-    margin-top: 30px;
+    margin-top: 20px;
   }
     ul {
       li {

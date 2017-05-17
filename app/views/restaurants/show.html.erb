@@ -1,9 +1,8 @@
 <div class="container">
-<div class="row">
-<h1><%= @restaurant.name %></h1>
-</div>
 <div class="row restaurant-info">
+  <div class="col-md-1"></div>
   <div class="col-md-10">
+  <h1><%= @restaurant.name %></h1>
   <div class="col-md-6 restaurant-details"><%= @restaurant.price_range %> • <%= @restaurant.cuisine %>
   </div>
   <div class="col-md-6">
@@ -17,13 +16,16 @@
     <%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %>
   </div>
   </div>
-  </div>
-  <div class="col-md-2"></div>
+  
+ 
 </div>
+ <div class="col-md-1"></div>
+ </div>
 
 <div class="row">
+<div class="col-md-1"></div>
 <div class="dishes-container col-md-10">
-<span class="dishes-heading"><h3>Dishes</h3></span>
+<span class="heading"><h3>Dishes</h3></span>
 <% @dishes.each do |d| %>
   <div class="dish row">
     <h4><%= d.name %></h4>
@@ -47,5 +49,74 @@
   </div>
 <% end %>
 </div>
+<div class="col-md-1"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10 new-review-container">
+<span class="heading"><h3>Write a Review</h3></span>
+    <% if user_signed_in? %>
+    <%= form_for @review, url: reviews_path(@review), html: { method: :post, class: "review-form" } do |f| %>
+
+    <div class="row">
+      <div class="col-md-3 field"><span><%= link_to current_user.username, current_user %></span></div>
+      <div class="col-md-6 field">
+        <%= f.number_field :rating, {class: "rating", required: true }%>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="field row">
+      <div class="col-md-3"></div>
+      <%= f.text_area :text, {rows: 8, class: "col-md-8", required: true } %>
+      <div class="col-md-1"></div>
+    </div>
+      <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+    <div class="row">
+      <div class="col-md-9"></div>
+      <%= f.submit "Submit", class: "btn btn-default col-md-2" %>
+      <div class="col-md-1"></div>
+    </div>
+    <% end %>
+    <% else %>
+      <p><%= link_to "Sign in", new_user_session_path %> or <%= link_to "sign up",new_user_registration_path %> to review this restaurant!</p>
+    <% end %>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10 reviews-container">
+<span class="heading"><h3>Reviews</h3></span>
+<% @reviews.each do |review| %>
+  <div class="review row">
+  <div class="col-md-3">
+  <div class="user-box">
+  <span><%= link_to review.user.username, user_path(review.user) %></span>
+  </div>
+  <% if review.user == current_user %>
+   <div><span class="delete-review-link"><span class="glyphicon glyphicon-remove"></span>     <%= link_to 'Delete', review,  method: :delete, data: { confirm: 'Are you sure?' } %>
+</span></div>
+  <% end %>
+  </div>
+  <div class="col-md-8 review-details">
+  <div class="review-rating">
+  <% review.rating.times do |i| %>
+    <span class="glyphicon glyphicon-star"></span>
+  <% end %>
+  </div>
+  <div class="review-text">
+  <%= review.text %>
+  </div>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+<% end %>
+<% if @reviews.empty? %>
+  <p>No reviews yet. Why don't you write one?</p>
+<% end %>
+</div>
+<div class="col-md-1"></div>
+
 </div>
 </div>

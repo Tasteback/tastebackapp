@@ -23,6 +23,8 @@ class RestaurantsController < ApplicationController
   end
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
+    @reviews = @restaurant.reviews.order(:created_at)
     if session[:dishes]
       @dishes = Dish.where(id: session[:dishes])
       @dishes = @dishes.restaurant(@restaurant.id)

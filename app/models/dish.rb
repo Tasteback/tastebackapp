@@ -1,4 +1,6 @@
 class Dish < ApplicationRecord
+  validates :name, presence: true
+  validates :restaurant_id, presence: true
   belongs_to :restaurant
   has_many :modifications
   has_many :dish_allergies
