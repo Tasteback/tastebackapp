@@ -5,15 +5,19 @@
       <div class="user-avatar"><%= image_tag @user.avatar.url(:medium) %></div>
       <h2><%= @user.username %></h2>
       <h5>Allergies:</h5>
-      <ul>
       <% @user.allergies.each do |a| %>
-        <li><%= a.name.capitalize %></li>
+        <div class="allergen">
+          <div class="allergen-icon"><%= image_tag a.icon.url(:thumb) %></div>
+          <span class="allergen-name"><%= a.name.capitalize %></span>
+          </div>
       <% end %>
       <% if @user.allergies.empty? %>
         <p>No allergies!</p>
       <% end %>
-      </ul>
+      <div class="edit-profile-link">
+      <span class="glyphicon glyphicon-pencil"></span>
       <%= link_to "Edit Profile", edit_user_path %>
+      </div>
     </div>
     <div class="col-md-3"></div>
   </div>

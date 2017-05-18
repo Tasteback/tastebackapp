@@ -3,12 +3,12 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <div class="user-form">
-<h2>Edit User Profile</h2>
-<%= form_tag({controller: "users", action: "update"}, {method: "put"}) do %>
+<h2>Edit Profile for <%= @user.username %></h2>
+<%= form_tag({controller: "users", action: "update"}, {method: "put", multipart: true}) do %>
 <div class="avatar-edit">
   <div class="user-avatar"><%= image_tag @user.avatar.url(:medium) %></div>
     <div>Change avatar</div>
-  <div class="fileUpload btn btn-primary">
+  <div class="fileUpload">
   <%= label_tag :avatar, "Upload" %>
   <%= file_field_tag :avatar, class: "upload" %>
   </div>

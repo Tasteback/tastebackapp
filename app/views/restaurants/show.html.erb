@@ -40,15 +40,16 @@
     
     <% d.dish_allergies.each do |da| %>
       <div class="row">
-      <div class="col-md-1"></div>
       <div class="allergen col-md-10">
-        <span class="allergen-name"><h5><%= da.allergy.name.capitalize %></h5></span>
-        <% if da.modification %>
-        <p>Modification: <%= da.modification.description %></p>
+        <div class="row">
+        <div class="col-md-2"><%= image_tag da.allergy.icon.url(:thumb) %></div>
+          <div class="col-md-10"><span class="allergen-name"><%= da.allergy.name.capitalize %></span>
+          <p><%= da.modification.description if da.modification %></p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-1"></div>
+      <div class="col-md-2"></div>
       </div>
-    <% end %>
     
     
   <% end %>

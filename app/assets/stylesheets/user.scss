@@ -1,3 +1,12 @@
+.edit-profile-link {
+  font-weight: bold;
+  font-size: .7em;
+  margin-top: 10px;
+  .glyphicon-pencil {
+    margin-right: 5px;
+  }
+}
+
 .profile-container {
    margin-left: auto;
     margin-right: auto; 
@@ -6,6 +15,13 @@
 
     li {
       text-align: left;
+    }
+
+    .allergen {
+      display: inline-block;
+      .allergen-icon {
+        margin-bottom: 10px;
+      }
     }
 }
 
@@ -26,24 +42,14 @@
         margin-right: auto;
         text-align: center;
 
-              .fileUpload {
-            position: relative;
-            overflow: hidden;
+        .fileUpload {
             margin-top: 10px;
+            margin-left: auto;
+         margin-right: auto;
+          text-align: center;
         }
         .user-avatar {
           margin: 10px;
-        }
-        .fileUpload input.upload {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 0;
-            padding: 0;
-            font-size: 20px;
-            cursor: pointer;
-            opacity: 0;
-            filter: alpha(opacity=0);
         }
       }
       
