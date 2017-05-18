@@ -11,6 +11,12 @@ class Restaurant < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode
 
-  #average rating method
+  def average_rating
+    if self.reviews.size > 0
+      return self.reviews.average(:rating).to_i
+    else
+      return 0
+    end
+  end
 
 end

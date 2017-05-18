@@ -3,7 +3,13 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
   <h1><%= @restaurant.name %></h1>
-  <div class="col-md-6 restaurant-details"><%= @restaurant.price_range %> • <%= @restaurant.cuisine %>
+  <div class="col-md-6 restaurant-details">
+   <div class="review-rating">
+    <% @restaurant.average_rating.times do |i| %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+    </div>
+  <%= @restaurant.price_range %> • <%= @restaurant.cuisine %>
   </div>
   <div class="col-md-6">
   <div class="restaurant-area">
@@ -60,15 +66,16 @@
     <%= form_for @review, url: reviews_path(@review), html: { method: :post, class: "review-form" } do |f| %>
 
     <div class="row">
-      <div class="col-md-3 field"><span><%= link_to current_user.username, current_user %></span></div>
-      <div class="col-md-6 field">
-        <%= f.number_field :rating, {class: "rating", required: true }%>
+      <div class="col-md-3">
+        <div class="user-box">
+        <div class="user-avatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
+          <span><%= link_to current_user.username, current_user %></span>
+        </div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
-    <div class="field row">
-      <div class="col-md-3"></div>
-      <%= f.text_area :text, {rows: 8, class: "col-md-8", required: true } %>
+      <div class="col-md-8 field">
+        <%= f.number_field :rating, {class: "rating", required: true }%>
+      <%= f.text_area :text, {rows: 8, class: "col-md-12", required: true } %>
+      </div>
       <div class="col-md-1"></div>
     </div>
       <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
@@ -92,6 +99,7 @@
   <div class="review row">
   <div class="col-md-3">
   <div class="user-box">
+  <div class="user-avatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
   <span><%= link_to review.user.username, user_path(review.user) %></span>
   </div>
   <% if review.user == current_user %>

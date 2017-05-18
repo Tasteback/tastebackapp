@@ -1,10 +1,14 @@
 <div class="container search-results-container">
 <% @restaurants.each do |r| %>
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="restaurant-item col-md-10">
+    <div class="restaurant-item col-md-8">
       <div class="col-md-6 restaurant-item-name">
       <span><%= link_to r.name, r %></span> <br>
+      <div class="review-rating">
+    <% r.average_rating.times do |i| %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+    </div>
       <%= r.price_range%> • <%= r.cuisine %>
       </div>
       <div class="col-md-6 restaurant-item-area">
@@ -15,7 +19,7 @@
       <%= r.address %><br>
       </div>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-4"></div>
   </div>
 <% end %>
 

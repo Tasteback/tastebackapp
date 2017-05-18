@@ -67,16 +67,21 @@
   }
 }
 
+ .user-box {
+      margin-bottom: 20px;  
+      text-align: center;
+      .user-avatar {
+        margin: 10px;
+      }
+    }
+
 .reviews-container {
   margin-bottom: 30px;
 
   .review {
     padding: 20px;
     
-    .user-box {
-      margin-bottom: 10px;  
 
-    }
 
     .delete-review-link {
       font-weight: bold;

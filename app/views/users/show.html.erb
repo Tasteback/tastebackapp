@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
   <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-md-6 profile-container">
+      <div class="user-avatar"><%= image_tag @user.avatar.url(:medium) %></div>
       <h2><%= @user.username %></h2>
       <h5>Allergies:</h5>
       <ul>
@@ -12,7 +13,7 @@
         <p>No allergies!</p>
       <% end %>
       </ul>
-      <%= link_to "Manage allergies", edit_user_path %>
+      <%= link_to "Edit Profile", edit_user_path %>
     </div>
     <div class="col-md-3"></div>
   </div>

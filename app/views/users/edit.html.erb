@@ -3,7 +3,16 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <div class="user-form">
+<h2>Edit User Profile</h2>
 <%= form_tag({controller: "users", action: "update"}, {method: "put"}) do %>
+<div class="avatar-edit">
+  <div class="user-avatar"><%= image_tag @user.avatar.url(:medium) %></div>
+    <div>Change avatar</div>
+  <div class="fileUpload btn btn-primary">
+  <%= label_tag :avatar, "Upload" %>
+  <%= file_field_tag :avatar, class: "upload" %>
+  </div>
+  </div>
 
   <div class="allergies-wrapper">
   <% @allergies.each do |a| %>
@@ -19,8 +28,9 @@
   </div>
   <% end %>
   </div>
-  
+  <div class="submit-wrapper">
   <%= submit_tag "Update", class: "btn btn-large submit-btn"%>
+  </div>
 <% end %>
 </div>
 </div>
