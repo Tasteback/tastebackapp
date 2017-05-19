@@ -4,14 +4,19 @@ class RestaurantsController < ApplicationController
   end
   def search_results
     @dishes = Dish.where(nil)
-    if search_params[:allergies] 
-      @dishes = @dishes.includes_allergies(search_params[:allergies]) if search_params[:allergies].any?
+    if search_params[:allergies] || search_params[:user_allergies]
+      if search_params[:allergies]
+        @dishes = @dishes.includes_allergies(search_params[:allergies]) if search_params[:allergies].any?
+      elsif search_params[:user_allergies]
+        @dishes = @dishes.includes_allergies(current_user.allergies)
+      end
       restaurant_ids = @dishes.map { |d| d.restaurant.id }
       @restaurants = Restaurant.where(id: restaurant_ids)
       dish_ids = @dishes.map { |d| d.id }
       session[:dishes] = dish_ids
     else
       @restaurants = Restaurant.all
+      session.delete(:dishes)
     end
     @geo = false
     if !params[:location].empty? && !params[:distance].empty?

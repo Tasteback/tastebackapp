@@ -8,7 +8,9 @@ class UsersController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(avatar: user_params[:avatar])
+    if user_params[:avatar]
+      @user.update_attributes(avatar: user_params[:avatar])
+    end
     @allergies = Allergy.find(user_params[:allergies])
     @user.allergies = @allergies
     if @user.save

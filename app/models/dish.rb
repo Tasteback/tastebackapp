@@ -5,6 +5,7 @@ class Dish < ApplicationRecord
   has_many :modifications
   has_many :dish_allergies
   has_many :allergies, through: :dish_allergies 
+  has_many :photos, as: :imageable
 
   scope :restaurant, -> (restaurant_id) { where(restaurant_id: restaurant_id)}
 

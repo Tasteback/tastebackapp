@@ -3,6 +3,50 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
   <h1><%= @restaurant.name %></h1>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<% if @restaurant.photos %>
+<div class="carousel-container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% @restaurant.photos.size.times do |i| %>
+    <li data-target="#carouselExampleIndicators" data-slide-to="<%=i%>" class="active"></li>
+    <% end %>
+    </ol>
+  
+  <div class="carousel-inner" role="listbox">
+    <% @restaurant.photos.each_with_index do |p, i| %>
+      <% if i == 0 %>
+        <div class="item active">
+          <%= image_tag p.image.url(:large), { class: "d-block img-fluid", alt: "#{(i+1).ordinalize} slide" }%>
+        </div>
+      <% else %>
+        <div class="item">
+          <%= image_tag p.image.url(:large), { class: "d-block img-fluid", alt: "#{(i+1).ordinalize} slide" }%>
+        </div>
+      <% end %>
+    
+    <% end %>
+  </div>
+  <div class="carousel-control">
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+</div>
+</div>
+<% end %>
+
+</div>
+<div class="col-md-2"></div>
+</div>
+<div class="row">
   <div class="col-md-6 restaurant-details">
    <div class="review-rating">
     <% @restaurant.average_rating.times do |i| %>
@@ -22,25 +66,35 @@
     <%= link_to "Website", "http://#{@restaurant.url}", target: "_blank" %>
   </div>
   </div>
+  </div>
+  </div>
   
- 
-</div>
+
  <div class="col-md-1"></div>
  </div>
 
+<div class="dishes-container">
 <div class="row">
-<div class="col-md-1"></div>
-<div class="dishes-container col-md-10">
-<span class="heading"><h3>Dishes</h3></span>
+  <div class="col-md-1"></div>
+  <div class="col-md-10"><span class="heading"><h3>Dishes</h3></span></div>
+  <div class="col-md-1"></div>
+</div>
 <% @dishes.each do |d| %>
-  <div class="dish row">
-    <h4><%= d.name %></h4>
+<div class="dish">
+  <div class="row">
+    <div class="col-md-4">
+    <% if d.photos.first %>
+    <div class="dish-image"><%= image_tag d.photos.first.image.url(:medium) %></div>
+    <% end %>
+    </div>
+    <div class="col-md-8">
+        <h4><%= d.name %></h4>
+    <% if d.dish_allergies.any? %>
     <p>Accomodates the following food restrictions:</p>
-    
-    
+    <% end %>
+
     <% d.dish_allergies.each do |da| %>
-      <div class="row">
-      <div class="allergen col-md-10">
+      <div class="allergen">
         <div class="row">
         <div class="col-md-2"><%= image_tag da.allergy.icon.url(:thumb) %></div>
           <div class="col-md-10"><span class="allergen-name"><%= da.allergy.name.capitalize %></span>
@@ -48,15 +102,15 @@
           </div>
         </div>
       </div>
-      <div class="col-md-2"></div>
-      </div>
-    
-    
   <% end %>
-  </div>
-<% end %>
+    </div>
+
+    
+
+
 </div>
-<div class="col-md-1"></div>
+</div>
+<% end %>
 </div>
 
 <div class="row">
@@ -65,8 +119,13 @@
 <span class="heading"><h3>Write a Review</h3></span>
     <% if user_signed_in? %>
     <%= form_for @review, url: reviews_path(@review), html: { method: :post, class: "review-form" } do |f| %>
-
     <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-8"><%= f.number_field :rating, {class: "rating", required: true }%></div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+
       <div class="col-md-3">
         <div class="user-box">
         <div class="user-avatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
@@ -74,8 +133,7 @@
         </div>
       </div>
       <div class="col-md-8 field">
-        <%= f.number_field :rating, {class: "rating", required: true }%>
-      <%= f.text_area :text, {rows: 8, class: "col-md-12", required: true } %>
+      <%= f.text_area :text, {rows: 8, required: true } %>
       </div>
       <div class="col-md-1"></div>
     </div>

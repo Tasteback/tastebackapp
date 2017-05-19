@@ -1,6 +1,12 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
 .cover-background {
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url("big-background.jpeg") center;
@@ -9,6 +15,9 @@
   background-size: cover;
 }
 
+.welcome-row {
+  margin-top: 50px;
+}
 .welcome-wrapper {
   text-align: center;
   padding: 30px;
@@ -42,25 +51,29 @@
      .location {
       display: inline-block;
       padding-right: 0;
+      padding-left: 0;
         .location-field {
           height: 3em;
           width: 100%;
-          padding-left: 10px; 
-          padding-right: 5px;
-          border-radius: 2px;
+          @include border-radius(2px);
+          padding-left: 10px;
+          padding-right: 10px;
           border: 1px solid #C5C5C5;
+          @include box-sizing(border-box);
         }
      }
      .distance {
       padding-left: 0;
       display: inline-block;
+      padding-right: 0;
         .distance-field {
           height: 3em;
           width: 100%;
-          padding-left: 10px; 
-          padding-right: 5px;
-          border-radius: 2px;
+          padding-left: 10px;
+          padding-right: 10px;
+          @include border-radius(2px);
           border: 1px solid #C5C5C5;
+          @include box-sizing(border-box);
         }
      }
     .submit-btn {
@@ -104,6 +117,7 @@
 }
 .search-results-container {
   margin-top: 30px;
+  min-height: 80vh;
 }
 .restaurant-item {
   border-bottom: 1px solid $gray-lighter;

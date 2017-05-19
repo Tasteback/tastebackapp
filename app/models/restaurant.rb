@@ -5,6 +5,7 @@ class Restaurant < ApplicationRecord
   has_many :dishes
   has_many :modifications
   has_many :reviews
+  has_many :photos, as: :imageable
   
   geocoded_by :address
   after_validation :geocode
