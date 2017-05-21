@@ -5,60 +5,79 @@
   "records": [
     {
       "sprig_id": 1,
-      "name": "Gluten-Free"
+      "name": "Gluten-Free",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Gluten-Free.png') %>"
     },
     {
       "sprig_id": 2,
-      "name": "Dairy-Free"
+      "name": "Dairy-Free",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Dairy.png') %>"
     },
   {
       "sprig_id": 3,
-      "name": "Pork"
+      "name": "Pork",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Pork.png') %>"
     },
 {
       "sprig_id": 4,
-      "name": "Seafood"
+      "name": "Seafood",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Seafood.png') %>"
     },
 {
       "sprig_id": 5,
-      "name": "Peanuts"
+      "name": "Peanuts",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Peanut.png') %>"
     },
 {
       "sprig_id": 6,
-      "name": "Vegan"
+      "name": "Vegan",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Vegan.png') %>"
     },
 {
       "sprig_id": 7,
-      "name": "Nuts"
+      "name": "Nuts",      
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Nuts.png') %>"
+
     },
 {
       "sprig_id": 8,
+      "name": "Vegetarian",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Vegetarian.png') %>"
 
-      "name": "Vegetarian"
     },
   {
       "sprig_id": 9,
-      "name": "Soy"
+      "name": "Soy",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Soy.png') %>"
     },
 {
       "sprig_id": 10,
-      "name": "Eggs"
+      "name": "Egg",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Egg.png') %>"
+
     },
 {
       "sprig_id": 11,
-      "name": "Beef"
+      "name": "Beef",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Beef.png') %>"
     },
 {
       "sprig_id": 12,
-      "name": "Shellfish"
+      "name": "Shellfish",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Shellfish.png') %>"
+
     },
 {
       "sprig_id": 13,
-      "name": "Chicken"
+      "name": "Chicken",
+      "icon": "<%= File.open('app/assets/images/allergen-icons/Chicken.png') %>"
+
     },
-  {
-  "sprig_id": 14,
-      "name": "Paleo"
+    {
+   "sprig_id": 14,
+    "name": "Paleo",
+    "icon": "<%= File.open('app/assets/images/allergen-icons/Paleo.png') %>"
+
     }
   ]
 }
