@@ -14,10 +14,12 @@
       <% if @user.allergies.empty? %>
         <p>No allergies!</p>
       <% end %>
+      <% if user_signed_in? && @user == current_user %>
       <div class="edit-profile-link">
       <span class="glyphicon glyphicon-pencil"></span>
       <%= link_to "Edit Profile", edit_user_path %>
       </div>
+      <% end %>
     </div>
     <div class="col-md-3"></div>
   </div>
