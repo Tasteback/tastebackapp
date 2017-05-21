@@ -1,4 +1,10 @@
 <div class="container search-results-container">
+<% if @restaurants.empty? %>
+
+<p>No restaurants were found with that criteria!</p>
+
+<% end %>
+
 <% @restaurants.each do |r| %>
   <div class="row">
   <div class="col-md-1"></div>

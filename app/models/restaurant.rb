@@ -3,7 +3,6 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
 
   has_many :dishes
-  has_many :modifications
   has_many :reviews
   has_many :photos, as: :imageable
   
