@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show, :edit, :update]
 
+
   match '/contacts', to: 'contacts#new', via: 'get'
 
   resources "contacts", only: [:new, :create]
