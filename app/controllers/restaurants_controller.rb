@@ -9,7 +9,11 @@ class RestaurantsController < ApplicationController
       if search_params[:allergies]
         @dishes = @dishes.includes_allergies(search_params[:allergies]) if search_params[:allergies].any?
       elsif search_params[:user_allergies]
-        @dishes = @dishes.includes_allergies(current_user.allergies)
+        if !current_user.allergies.empty?
+          @dishes = @dishes.includes_allergies(current_user.allergies)
+        else
+          @dishes = Dish.all
+        end
       end
       restaurant_ids = @dishes.map { |d| d.restaurant.id }
       @restaurants = Restaurant.where(id: restaurant_ids)

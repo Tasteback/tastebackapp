@@ -11,8 +11,12 @@ class UsersController < ApplicationController
     if user_params[:avatar]
       @user.update_attributes(avatar: user_params[:avatar])
     end
-    @allergies = Allergy.find(user_params[:allergies])
-    @user.allergies = @allergies
+    if user_params[:allergies]
+      @allergies = Allergy.find(user_params[:allergies])
+      @user.allergies = @allergies
+    else 
+      @user.allergies = []
+    end
     if @user.save
       flash[:success] = "Profile updated."
       redirect_to @user
