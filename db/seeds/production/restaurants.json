@@ -1,0 +1,114 @@
+  {
+  "records": [
+  {
+      "sprig_id": 1,
+      "name": "Cultured Caveman",
+      "cuisine": "Paleo",
+      "address": "220 SW Stark St, Portland, OR",
+      "area": "SW Portland",
+      "price_range": "$$$",
+      "hours": "11 AM - 4 PM M-F",
+      "url": "http://culturedcavemanpdx.com",
+      "phone_number": "971-254-4948"
+    },
+  {
+      "sprig_id": 2,
+      "name": "The Brooklyn House Restaurant",
+      "cuisine": "American Cafe",
+      "address": "3131 SE 12th Ave, Portland, OR",
+      "area": "SE Portland",
+      "price_range": "$$$$",
+      "hours": "5 PM - 10 PM W-Sat, 10 AM - 2 PM and 4 PM to 8 PM Sun",
+      "url": "http://brooklynhouserestaurant.com",
+      "phone_number": "503-236-6761"
+    },
+  {
+      "sprig_id": 3,
+      "name": "Dick's Kitchen",
+      "cuisine": "American",
+      "address": "3312 SE Belmont St, Portland, OR 97214",
+      "area": "SE Portland",
+      "price_range": "$$",
+      "hours": "11 AM - 9 PM Sun-Th, 11 AM - 10 PM F-Sat",
+      "url": "http://www.dickskitchen.com",
+      "phone_number": "503-235-0146"
+    },
+  {
+      "sprig_id": 4,
+      "name": "Desi PDX",
+      "cuisine": "Indian Fusion",
+      "address": "1477 NE Alberta St, Portland, OR",
+      "area": "NE Portland",
+      "price_range": "$$",
+      "hours": "4 PM - 9 PM W-Th, 12 PM - 9 PM F-Sat, 12 PM - 8 PM Sun",
+      "url": "http://www.desipdx.com/",
+      "phone_number": ""
+    },
+{
+      "sprig_id": 5,
+      "name": "Departure",
+      "cuisine": "Asian",
+      "address": "525 SW Morrison St, Portland, OR 97204",
+      "area": "SW Portland",
+      "price_range": "$$$$",
+      "hours": "4 PM - 12 AM Sun-Th, 4 PM - 1 AM F-Sat",
+      "url": "http://departureportland.com/",
+      "phone_number": "503-802-5370"
+    },
+{
+      "sprig_id": 6,
+      "name": "Verde Cocina",
+      "cuisine": "Mexican",
+      "address": "6446 SW Capitol HWY, Portland, OR",
+      "area": "SW Portland",
+      "price_range": "$$",
+      "hours": "11 AM - 9 PM M-F, 9 AM - 9 PM Sat-Sun",
+      "url": "https://www.verdecocinamarket.com/",
+      "phone_number": "503-384-2327"
+    },
+{
+      "sprig_id": 7,
+      "name": "Verde Cocina",
+      "cuisine": "Mexican",
+      "address": "3746 N. Mississippi Avenue, Portland, OR 97227",
+      "area": "N Portland",
+      "price_range": "$$",
+      "hours": "11 AM - 9 PM M-Th, 11 AM - 10 PM F, 10 AM - 10 PM Sat, 10 AM - 9 PM Sun",
+      "url": "https://www.verdecocinamarket.com/",
+      "phone_number": "503-206-7586"
+    },
+{
+      "sprig_id": 8,
+      "name": "Verde Cocina",
+      "cuisine": "Mexican",
+      "address": "524 NW 14th, Portland, OR",
+      "area": "NW Portland",
+      "price_range": "$$",
+      "hours": "11 AM - 9 PM M-W, 11 AM - 11 PM Th-F, 10 AM - 11 PM Sat, 10 AM - 9 PM Sun, 3 PM - 5:30 PM Happy Hour",
+      "url": "https://www.verdecocinamarket.com/",
+      "phone_number": "503-894-9321"
+    },
+{
+      "sprig_id": 9,
+      "name": "Verde Cocina",
+      "cuisine": "Mexican",
+      "address": "5515 SW Canyon Ct, Portland, OR 97221",
+      "area": "SW Portland",
+      "price_range": "$$",
+      "hours": "11 AM - 11 PM M-Th, 11 AM - 12 AM F, 10 AM - 12 AM Sat, 10 AM - 10 PM Sun, 3 PM - 5:30 PM Happy Hour M-Sat, 12 AM - 12 AM Happy Hour Sun",
+      "url": "https://www.verdecocinamarket.com/",
+      "phone_number": "503-297-5568"
+    },
+{
+      "sprig_id": 10,
+      "name": "Maruti",
+      "cuisine": "Indian",
+      "address": "1925 SE Hawthorne Blvd, Portland, OR  97214",
+      "area": "SE Portland",
+      "price_range": "$$$",
+      "hours": "5:30 PM - 9:30 PM F-Sat, 5:30 PM - 9 PM Sun-M and W-Th",
+      "url": "https://www.maruti-restaurant.com",
+      "phone_number": "503-236-0714"
+    }
+  ]
+}

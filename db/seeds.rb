@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+include Sprig::Helpers
+sprig [Restaurant, Dish, DishAllergy, Allergy]

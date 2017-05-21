@@ -1,0 +1,64 @@
+{
+    "options": {
+    "find_existing_by": ["name"]
+  },
+  "records": [
+    {
+      "sprig_id": 1,
+      "name": "Gluten-Free"
+    },
+    {
+      "sprig_id": 2,
+      "name": "Dairy-Free"
+    },
+  {
+      "sprig_id": 3,
+      "name": "Pork"
+    },
+{
+      "sprig_id": 4,
+      "name": "Seafood"
+    },
+{
+      "sprig_id": 5,
+      "name": "Peanuts"
+    },
+{
+      "sprig_id": 6,
+      "name": "Vegan"
+    },
+{
+      "sprig_id": 7,
+      "name": "Nuts"
+    },
+{
+      "sprig_id": 8,
+
+      "name": "Vegetarian"
+    },
+  {
+      "sprig_id": 9,
+      "name": "Soy"
+    },
+{
+      "sprig_id": 10,
+      "name": "Eggs"
+    },
+{
+      "sprig_id": 11,
+      "name": "Beef"
+    },
+{
+      "sprig_id": 12,
+      "name": "Shellfish"
+    },
+{
+      "sprig_id": 13,
+      "name": "Chicken"
+    },
+  {
+  "sprig_id": 14,
+      "name": "Paleo"
+    }
+  ]
+}

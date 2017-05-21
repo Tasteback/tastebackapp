@@ -25,7 +25,11 @@
   <% @allergies.each do |a| %>
   <div class="allergy-select">
     <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden"} %>
+    <% if a.dishes.empty? %>
+    <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default btn-greyed "}%>
+    <% else %>
     <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
+    <% end %>
   </div>
   <% end %>
   <% if user_signed_in? %>

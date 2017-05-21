@@ -101,10 +101,17 @@
     input[type="checkbox"] + label {
       color: $gray;
       background-color: #FFF;
+      &.btn-greyed {
+      color: $gray-lighter;
+      background-color: $gray;
+    }
     }
     input[type="checkbox"]:checked + label {
       color: #FFF;
       background-color: $brand-primary;
+      &.btn-greyed {
+        background-color: darken($brand-primary, 30%);
+    }
     }
     .btn {
       padding: 12px;
@@ -113,11 +120,13 @@
       text-shadow: none;
       border: none;
     }
+
   }
 }
 .search-results-container {
   margin-top: 30px;
   min-height: 80vh;
+  margin-bottom: 80px;
 }
 .restaurant-item {
   border-bottom: 1px solid $gray-lighter;
