@@ -6,7 +6,7 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<% if @restaurant.photos %>
+<% if @restaurant.photos.size > 0 %>
 <div class="carousel-container">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -29,6 +29,7 @@
     
     <% end %>
   </div>
+  <% if @restaurant.photos.size > 1 %>
   <div class="carousel-control">
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -39,15 +40,18 @@
     <span class="sr-only">Next</span>
   </a>
   </div>
+  <% end %>
 </div>
 </div>
 <% end %>
-
 </div>
 <div class="col-md-2"></div>
 </div>
 <div class="row">
   <div class="col-md-6 restaurant-details">
+  <% if user_signed_in? %>
+<%= link_to "Add a photo of this restaurant!", edit_restaurant_path(id: @restaurant.id) %>
+<% end %>
    <div class="review-rating">
     <% @restaurant.average_rating.times do |i| %>
       <span class="glyphicon glyphicon-star"></span>
@@ -82,12 +86,8 @@
 <% @dishes.each do |d| %>
 <div class="dish">
   <div class="row">
-    <div class="col-md-4">
-    <% if d.photos.first %>
-    <div class="dish-image"><%= image_tag d.photos.first.image.url(:small) %></div>
-    <% end %>
-    </div>
-    <div class="col-md-8">
+  <div class="col-md-1"></div>
+    <div class="col-md-10">
         <h4><%= d.name %></h4>
     <% if d.dish_allergies.any? %>
     <p>Accomodates the following food restrictions:</p>
@@ -104,6 +104,7 @@
       </div>
   <% end %>
     </div>
+    <div class="col-md-1"></div>
 
     
 
@@ -158,7 +159,7 @@
   <div class="review row">
   <div class="col-md-3">
   <div class="user-box">
-  <div class="user-avatar"><%= image_tag current_user.avatar.url(:thumb) %></div>
+  <div class="user-avatar"><%= image_tag review.user.avatar.url(:thumb) %></div>
   <span><%= link_to review.user.username, user_path(review.user) %></span>
   </div>
   <% if review.user == current_user %>

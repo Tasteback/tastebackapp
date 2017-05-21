@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'about', to: 'static_pages#about', as: :about
 
-  resources :restaurants, only: [:show]
+  resources :restaurants, only: [:show, :edit, :update]
 
   match '/contacts', to: 'contacts#new', via: 'get'
 
