@@ -8,7 +8,7 @@
       <% @user.allergies.each do |a| %>
         <div class="allergen">
           <div class="allergen-icon"><%= image_tag a.icon.url(:thumb) %></div>
-          <span class="allergen-name"><%= a.name.capitalize %></span>
+          <span class="allergen-name"><%= a.name %></span>
           </div>
       <% end %>
       <% if @user.allergies.empty? %>

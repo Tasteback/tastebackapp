@@ -1,7 +1,7 @@
 class Dish < ApplicationRecord
   validates :name, presence: true
   validates :restaurant_id, presence: true
-  belongs_to :restaurant
+  belongs_to :restaurant, dependent: :destroy
   has_many :dish_allergies
   has_many :allergies, through: :dish_allergies 
   has_many :photos, as: :imageable

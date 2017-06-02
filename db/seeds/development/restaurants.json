@@ -1,6 +1,6 @@
   {
     "options": {
-    "find_existing_by": ["name", "address"]
+    "find_existing_by": ["address"]
   },
   "records": 
   [{
