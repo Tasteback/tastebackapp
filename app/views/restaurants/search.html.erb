@@ -26,9 +26,9 @@
   <div class="allergy-select">
     <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden"} %>
     <% if a.dishes.empty? %>
-    <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default btn-greyed "}%>
+    <%= label_tag "allergies[]", a.name, {for: a.name, class: "btn btn-default btn-greyed "}%>
     <% else %>
-    <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
+    <%= label_tag "allergies[]", a.name, {for: a.name, class: "btn btn-default"}%>
     <% end %>
   </div>
   <% end %>
@@ -39,6 +39,7 @@
   </div>
 
   <%= submit_tag "Find", class: "btn btn-large submit-btn"%>
+  <div class="suggestion-link"><%= link_to "Suggest a restaurant", "https://docs.google.com/a/catlin.edu/forms/d/e/1FAIpQLSen0ZZfoswU9qfFZ97dmd49o7c21rHZJjooX9_jgrTB-QikhQ/viewform"  %></div>
 
 <% end %>
 </div>

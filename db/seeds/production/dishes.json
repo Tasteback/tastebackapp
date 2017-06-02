@@ -1,1 +1,130 @@
-{"records":[{"sprig_id":1,"name":"Grass Fed All Meat Chili","restaurant_id":"<%= sprig_record(Restaurant, 1).id %>"},{"sprig_id":2,"name":"Seasonal Curry","restaurant_id":"<%= sprig_record(Restaurant, 1).id %>"},{"sprig_id":3,"name":"Salmon Poke Salad","restaurant_id":"<%= sprig_record(Restaurant, 1).id %>"},{"sprig_id":4,"name":"Pork Carnitas Tacos","restaurant_id":"<%= sprig_record(Restaurant, 1).id %>"},{"sprig_id":5,"name":"Shepherds Pie","restaurant_id":"<%= sprig_record(Restaurant, 1).id %>"},{"sprig_id":6,"name":"Paleo Plate","restaurant_id":"<%= sprig_record(Restaurant, 3).id %>"},{"sprig_id":7,"name":"Mixed Greens","restaurant_id":"<%= sprig_record(Restaurant, 3).id %>"},{"sprig_id":8,"name":"Veggie Plate","restaurant_id":"<%= sprig_record(Restaurant, 3).id %>"},{"sprig_id":9,"name":"BBQ Tempeh 'Burger'","restaurant_id":"<%= sprig_record(Restaurant, 3).id %>"},{"sprig_id":10,"name":"Tempeh Rueben","restaurant_id":"<%= sprig_record(Restaurant, 3).id %>"},{"sprig_id":11,"name":"Chana Masala Belly","restaurant_id":"<%= sprig_record(Restaurant, 4).id %>"},{"sprig_id":12,"name":"Cardamom Chai Chicken","restaurant_id":"<%= sprig_record(Restaurant, 4).id %>"},{"sprig_id":13,"name":"Rice & Bean Bowl","restaurant_id":"<%= sprig_record(Restaurant, 4).id %>"},{"sprig_id":14,"name":"Thali Platter","restaurant_id":"<%= sprig_record(Restaurant, 4).id %>"},{"sprig_id":15,"name":"Portlindian Fried Rice","restaurant_id":"<%= sprig_record(Restaurant, 4).id %>"},{"sprig_id":16,"name":"Kani Avocado Roll","restaurant_id":"<%= sprig_record(Restaurant, 5).id %>"},{"sprig_id":17,"name":"Power Greens Salad","restaurant_id":"<%= sprig_record(Restaurant, 5).id %>"},{"sprig_id":18,"name":"Misozuke Carrot Roll","restaurant_id":"<%= sprig_record(Restaurant, 5).id %>"},{"sprig_id":19,"name":"Kimchi Fried Rice","restaurant_id":"<%= sprig_record(Restaurant, 5).id %>"},{"sprig_id":20,"name":"Harami-Beef Skirt Steak","restaurant_id":"<%= sprig_record(Restaurant, 5).id %>"},{"sprig_id":21,"name":"Samosa Chole","restaurant_id":"<%= sprig_record(Restaurant, 10).id %>"},{"sprig_id":22,"name":"Onion Potato Pakora","restaurant_id":"<%= sprig_record(Restaurant, 10).id %>"},{"sprig_id":23,"name":"Paneer Tikka Masala","restaurant_id":"<%= sprig_record(Restaurant, 10).id %>"},{"sprig_id":24,"name":"Vegetable Biryani","restaurant_id":"<%= sprig_record(Restaurant, 10).id %>"},{"sprig_id":25,"name":"Water Melon Mung Sprout Salad","restaurant_id":"<%= sprig_record(Restaurant, 10).id %>"}]}
+{
+  "options": {
+    "find_existing_by": ["name", "restaurant_id"]
+  },
+  "records": [{
+    "sprig_id": 1,
+    "name": "Grass Fed All Meat Chili",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 2,
+    "name": "Seasonal Curry",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 3,
+    "name": "Salmon Poke Salad",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 4,
+    "name": "Pork Carnitas Tacos",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 5,
+    "name": "Shepherds Pie",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 6,
+    "name": "Paleo Plate",
+    "restaurant_id": "<%= sprig_record(Restaurant, 3).id %>"
+  }, {
+    "sprig_id": 7,
+    "name": "Mixed Greens",
+    "restaurant_id": "<%= sprig_record(Restaurant, 3).id %>"
+  }, {
+    "sprig_id": 8,
+    "name": "Veggie Plate",
+    "restaurant_id": "<%= sprig_record(Restaurant, 3).id %>"
+  }, {
+    "sprig_id": 9,
+    "name": "BBQ Tempeh Burger",
+    "restaurant_id": "<%= sprig_record(Restaurant, 3).id %>"
+  }, {
+    "sprig_id": 10,
+    "name": "Tempeh Rueben",
+    "restaurant_id": "<%= sprig_record(Restaurant, 3).id %>"
+  }, {
+    "sprig_id": 11,
+    "name": "Chana Masala Belly",
+    "restaurant_id": "<%= sprig_record(Restaurant, 4).id %>"
+  }, {
+    "sprig_id": 12,
+    "name": "Cardamom Chai Chicken",
+    "restaurant_id": "<%= sprig_record(Restaurant, 4).id %>"
+  }, {
+    "sprig_id": 13,
+    "name": "Rice & Bean Bowl",
+    "restaurant_id": "<%= sprig_record(Restaurant, 4).id %>"
+  }, {
+    "sprig_id": 14,
+    "name": "Thali Platter",
+    "restaurant_id": "<%= sprig_record(Restaurant, 4).id %>"
+  }, {
+    "sprig_id": 15,
+    "name": "Portlindian Fried Rice",
+    "restaurant_id": "<%= sprig_record(Restaurant, 4).id %>"
+  }, {
+    "sprig_id": 16,
+    "name": "Kani Avocado Roll",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 17,
+    "name": "Power Greens Salad",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 18,
+    "name": "Misozuke Carrot Roll",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 19,
+    "name": "Kimchi Fried Rice",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 20,
+    "name": "Harami-Beef Skirt Steak",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 21,
+    "name": "Samosa Chole",
+    "restaurant_id": "<%= sprig_record(Restaurant, 10).id %>"
+  }, {
+    "sprig_id": 22,
+    "name": "Onion Potato Pakora",
+    "restaurant_id": "<%= sprig_record(Restaurant, 10).id %>"
+  }, {
+    "sprig_id": 23,
+    "name": "Paneer Tikka Masala",
+    "restaurant_id": "<%= sprig_record(Restaurant, 10).id %>"
+  }, {
+    "sprig_id": 24,
+    "name": "Vegetable Biryani",
+    "restaurant_id": "<%= sprig_record(Restaurant, 10).id %>"
+  }, {
+    "sprig_id": 25,
+    "name": "Water Melon Mung Sprout Salad",
+    "restaurant_id": "<%= sprig_record(Restaurant, 10).id %>"
+  }, {
+    "sprig_id": 26,
+    "name": "Can make at request",
+    "restaurant_id": "<%= sprig_record(Restaurant, 1).id %>"
+  }, {
+    "sprig_id": 27,
+    "name": "Can make at request",
+    "restaurant_id": "<%= sprig_record(Restaurant, 2).id %>"
+  }, {
+    "sprig_id": 28,
+    "name": "Can make at request",
+    "restaurant_id": "<%= sprig_record(Restaurant, 5).id %>"
+  }, {
+    "sprig_id": 29,
+    "name": "Rice",
+    "restaurant_id": "<%= sprig_record(Restaurant, 11).id %>"
+  }, {
+    "sprig_id": 30,
+    "name": "Carnitas",
+    "restaurant_id": "<%= sprig_record(Restaurant, 11).id %>"
+  }, {
+    "sprig_id": 31,
+    "name": "Can make at request",
+    "restaurant_id": "<%= sprig_record(Restaurant, 12).id %>"
+  }]
+}

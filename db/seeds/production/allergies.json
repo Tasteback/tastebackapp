@@ -73,11 +73,21 @@
       "icon": "<%= File.open('app/assets/images/allergen-icons/Chicken.png') %>"
 
     },
-    {
-   "sprig_id": 14,
+{
+    "sprig_id": 14,
     "name": "Paleo",
     "icon": "<%= File.open('app/assets/images/allergen-icons/Paleo.png') %>"
 
+    },
+    {
+    "sprig_id": 15,
+    "name": "Low FODMAP",
+    "icon": "<%= File.open('app/assets/images/allergen-icons/Low-FODMAP.png') %>"
+    },
+    {
+    "sprig_id": 16,
+    "name": "SCD Legal",
+    "icon": "<%= File.open('app/assets/images/allergen-icons/SCD-Legal.png') %>"
     }
   ]
 }

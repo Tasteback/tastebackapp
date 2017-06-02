@@ -1,1 +1,190 @@
-{"records":[{"sprig_id":1,"dish_id":"<%= sprig_record(Dish, 1).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":2,"dish_id":"<%= sprig_record(Dish, 2).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":3,"dish_id":"<%= sprig_record(Dish, 3).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":4,"dish_id":"<%= sprig_record(Dish, 4).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":5,"dish_id":"<%= sprig_record(Dish, 5).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":6,"dish_id":"<%= sprig_record(Dish, 1).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":7,"dish_id":"<%= sprig_record(Dish, 2).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":8,"dish_id":"<%= sprig_record(Dish, 3).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":9,"dish_id":"<%= sprig_record(Dish, 4).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":10,"dish_id":"<%= sprig_record(Dish, 5).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":11,"dish_id":"<%= sprig_record(Dish, 1).id %>","allergy_id":"<%= sprig_record(Allergy, 2).id %>"},{"sprig_id":12,"dish_id":"<%= sprig_record(Dish, 2).id %>","allergy_id":"<%= sprig_record(Allergy, 2).id %>"},{"sprig_id":13,"dish_id":"<%= sprig_record(Dish, 3).id %>","allergy_id":"<%= sprig_record(Allergy, 2).id %>"},{"sprig_id":14,"dish_id":"<%= sprig_record(Dish, 4).id %>","allergy_id":"<%= sprig_record(Allergy, 2).id %>"},{"sprig_id":15,"dish_id":"<%= sprig_record(Dish, 5).id %>","allergy_id":"<%= sprig_record(Allergy, 2).id %>"},{"sprig_id":16,"dish_id":"<%= sprig_record(Dish, 6).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":17,"dish_id":"<%= sprig_record(Dish, 7).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":18,"dish_id":"<%= sprig_record(Dish, 8).id %>","allergy_id":"<%= sprig_record(Allergy, 8).id %>"},{"sprig_id":19,"dish_id":"<%= sprig_record(Dish, 9).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":20,"dish_id":"<%= sprig_record(Dish, 10).id %>","allergy_id":"<%= sprig_record(Allergy, 8).id %>"},{"sprig_id":21,"dish_id":"<%= sprig_record(Dish, 11).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":22,"dish_id":"<%= sprig_record(Dish, 12).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"},{"sprig_id":23,"dish_id":"<%= sprig_record(Dish, 13).id %>","allergy_id":"<%= sprig_record(Allergy, 8).id %>"},{"sprig_id":24,"dish_id":"<%= sprig_record(Dish, 14).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":25,"dish_id":"<%= sprig_record(Dish, 15).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":26,"dish_id":"<%= sprig_record(Dish, 16).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":27,"dish_id":"<%= sprig_record(Dish, 17).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":28,"dish_id":"<%= sprig_record(Dish, 20).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":29,"dish_id":"<%= sprig_record(Dish, 18).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":30,"dish_id":"<%= sprig_record(Dish, 19).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":31,"dish_id":"<%= sprig_record(Dish, 21).id %>","allergy_id":"<%= sprig_record(Allergy, 6).id %>"},{"sprig_id":32,"dish_id":"<%= sprig_record(Dish, 24).id %>","allergy_id":"<%= sprig_record(Allergy, 8).id %>"},{"sprig_id":33,"dish_id":"<%= sprig_record(Dish, 22).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":34,"dish_id":"<%= sprig_record(Dish, 23).id %>","allergy_id":"<%= sprig_record(Allergy, 1).id %>"},{"sprig_id":35,"dish_id":"<%= sprig_record(Dish, 25).id %>","allergy_id":"<%= sprig_record(Allergy, 14).id %>"}]}
+{
+  "options": {
+    "find_existing_by": ["dish_id", "allergy_id"]
+  },
+  "records": [{
+    "sprig_id": 1,
+    "dish_id": "<%= sprig_record(Dish, 1).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 2,
+    "dish_id": "<%= sprig_record(Dish, 2).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 3,
+    "dish_id": "<%= sprig_record(Dish, 3).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 4,
+    "dish_id": "<%= sprig_record(Dish, 4).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 5,
+    "dish_id": "<%= sprig_record(Dish, 5).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 6,
+    "dish_id": "<%= sprig_record(Dish, 1).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 7,
+    "dish_id": "<%= sprig_record(Dish, 2).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 8,
+    "dish_id": "<%= sprig_record(Dish, 3).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 9,
+    "dish_id": "<%= sprig_record(Dish, 4).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 10,
+    "dish_id": "<%= sprig_record(Dish, 5).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 11,
+    "dish_id": "<%= sprig_record(Dish, 1).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 2).id %>"
+  }, {
+    "sprig_id": 12,
+    "dish_id": "<%= sprig_record(Dish, 2).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 2).id %>"
+  }, {
+    "sprig_id": 13,
+    "dish_id": "<%= sprig_record(Dish, 3).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 2).id %>"
+  }, {
+    "sprig_id": 14,
+    "dish_id": "<%= sprig_record(Dish, 4).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 2).id %>"
+  }, {
+    "sprig_id": 15,
+    "dish_id": "<%= sprig_record(Dish, 5).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 2).id %>"
+  }, {
+    "sprig_id": 16,
+    "dish_id": "<%= sprig_record(Dish, 6).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 17,
+    "dish_id": "<%= sprig_record(Dish, 7).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 18,
+    "dish_id": "<%= sprig_record(Dish, 8).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 8).id %>"
+  }, {
+    "sprig_id": 19,
+    "dish_id": "<%= sprig_record(Dish, 9).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 20,
+    "dish_id": "<%= sprig_record(Dish, 10).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 8).id %>"
+  }, {
+    "sprig_id": 21,
+    "dish_id": "<%= sprig_record(Dish, 11).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 22,
+    "dish_id": "<%= sprig_record(Dish, 12).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 23,
+    "dish_id": "<%= sprig_record(Dish, 13).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 8).id %>"
+  }, {
+    "sprig_id": 24,
+    "dish_id": "<%= sprig_record(Dish, 14).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 25,
+    "dish_id": "<%= sprig_record(Dish, 15).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 26,
+    "dish_id": "<%= sprig_record(Dish, 16).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 27,
+    "dish_id": "<%= sprig_record(Dish, 17).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 28,
+    "dish_id": "<%= sprig_record(Dish, 20).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 29,
+    "dish_id": "<%= sprig_record(Dish, 18).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 30,
+    "dish_id": "<%= sprig_record(Dish, 19).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 31,
+    "dish_id": "<%= sprig_record(Dish, 21).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 6).id %>"
+  }, {
+    "sprig_id": 32,
+    "dish_id": "<%= sprig_record(Dish, 24).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 8).id %>"
+  }, {
+    "sprig_id": 33,
+    "dish_id": "<%= sprig_record(Dish, 22).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 34,
+    "dish_id": "<%= sprig_record(Dish, 23).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 1).id %>"
+  }, {
+    "sprig_id": 35,
+    "dish_id": "<%= sprig_record(Dish, 25).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 14).id %>"
+  }, {
+    "sprig_id": 36,
+    "dish_id": "<%= sprig_record(Dish, 26).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 37,
+    "dish_id": "<%= sprig_record(Dish, 27).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 38,
+    "dish_id": "<%= sprig_record(Dish, 28).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 39,
+    "dish_id": "<%= sprig_record(Dish, 26).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 16).id %>"
+  }, {
+    "sprig_id": 40,
+    "dish_id": "<%= sprig_record(Dish, 27).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 16).id %>"
+  }, {
+    "sprig_id": 41,
+    "dish_id": "<%= sprig_record(Dish, 28).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 16).id %>"
+  }, {
+    "sprig_id": 42,
+    "dish_id": "<%= sprig_record(Dish, 29).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 43,
+    "dish_id": "<%= sprig_record(Dish, 30).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 16).id %>"
+  }, {
+    "sprig_id": 44,
+    "dish_id": "<%= sprig_record(Dish, 30).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 45,
+    "dish_id": "<%= sprig_record(Dish, 31).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 15).id %>"
+  }, {
+    "sprig_id": 46,
+    "dish_id": "<%= sprig_record(Dish, 31).id %>",
+    "allergy_id": "<%= sprig_record(Allergy, 16).id %>"
+  }]
+}

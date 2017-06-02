@@ -1,6 +1,9 @@
   {
-  "records": [
-  {
+    "options": {
+    "find_existing_by": ["name", "address"]
+  },
+  "records": 
+  [{
       "sprig_id": 1,
       "name": "Cultured Caveman",
       "cuisine": "Paleo",
@@ -109,6 +112,28 @@
       "hours": "5:30 PM - 9:30 PM F-Sat, 5:30 PM - 9 PM Sun-M and W-Th",
       "url": "https://www.maruti-restaurant.com",
       "phone_number": "503-236-0714"
+    },
+{
+      "sprig_id": 11,
+      "name": "Chipotle",
+      "cuisine": "Mexican",
+      "address": "N/A",
+      "area": "N/A",
+      "price_range": "$",
+      "hours": "10:45 AM - 10 PM M-Sun",
+      "url": "https://www.chipotle.com",
+      "phone_number": "N/A"
+    },
+{
+      "sprig_id": 12,
+      "name": "Ground Breaker Brewing Co",
+      "cuisine": "Gastropub and Brewery",
+      "address": "2030 SE 7th Ave, Portland, OR 97214",
+      "area": "SE Portland",
+      "price_range": "$$",
+      "hours": "12 PM - 9 PM T-Sun",
+      "url": "https://www.groundbreakerbrewing.com/",
+      "phone_number": "503-928-4195"
     }
   ]
 }

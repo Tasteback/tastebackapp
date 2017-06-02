@@ -34,6 +34,7 @@
 
 .search-form-wrapper {
   .search-form {
+
     display: block;
     text-align: center;
 
@@ -83,6 +84,13 @@
       padding: 15px;
       width: 100px;
     }
+    }
+    .suggestion-link {
+      margin-top: 10px;
+      a {
+        color: #FFF;
+        font-size: 0.9em;
+      }
     }
   }
   .allergies-wrapper {
