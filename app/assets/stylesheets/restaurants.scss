@@ -2,151 +2,149 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
 }
 
 .cover-background {
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url("big-background.jpeg") center;
-  height: 100vh;
-  min-height: 800px;
-  width: auto;
-  background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url("big-background.jpeg") center;
+    height: 100vh;
+    min-height: 800px;
+    width: auto;
+    background-size: cover;
 }
 
 .welcome-row {
-  margin-top: 50px;
+    margin-top: 50px;
 }
+
 .welcome-wrapper {
-  text-align: center;
-  padding: 30px;
-  height: 20%;
-  color: #FFF;
+    text-align: center;
+    padding: 30px;
+    height: 20%;
+    color: #FFF;
     h3 {
-    line-height: 1.2em;
-  }
+        line-height: 1.2em;
+    }
 }
 
 .search-form-row {
-  position: relative;
+    position: relative;
 }
 
 .search-form-wrapper {
-  .search-form {
-
-    display: block;
-    text-align: center;
-
-    form {
-      display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      width: 100%;
-
-      label {
-        color: #FFF;
-      }
-    
-     .location {
-      display: inline-block;
-      padding-right: 0;
-      padding-left: 0;
-        .location-field {
-          height: 3em;
-          width: 100%;
-          @include border-radius(2px);
-          padding-left: 10px;
-          padding-right: 10px;
-          border: 1px solid #C5C5C5;
-          @include box-sizing(border-box);
+    .search-form {
+        display: block;
+        text-align: center;
+        form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 100%;
+            label {
+                color: #FFF;
+            }
+            .location {
+                display: inline-block;
+                padding-right: 0;
+                padding-left: 0;
+                .location-field {
+                    height: 3em;
+                    width: 100%;
+                    @include border-radius(2px);
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border: 1px solid #C5C5C5;
+                    @include box-sizing(border-box);
+                }
+            }
+            .distance {
+                padding-left: 0;
+                display: inline-block;
+                padding-right: 0;
+                .distance-field {
+                    height: 3em;
+                    width: 100%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    @include border-radius(2px);
+                    border: 1px solid #C5C5C5;
+                    @include box-sizing(border-box);
+                }
+            }
+            .submit-btn {
+                background-color: $brand-primary;
+                color: #FFF;
+                margin: auto;
+                padding: 15px;
+                width: 100px;
+            }
         }
-     }
-     .distance {
-      padding-left: 0;
-      display: inline-block;
-      padding-right: 0;
-        .distance-field {
-          height: 3em;
-          width: 100%;
-          padding-left: 10px;
-          padding-right: 10px;
-          @include border-radius(2px);
-          border: 1px solid #C5C5C5;
-          @include box-sizing(border-box);
+        .bottom-link {
+            margin-top: 10px;
+            a {
+                color: #FFF;
+                font-size: 0.9em;
+            }
         }
-     }
-    .submit-btn {
-      background-color: $brand-primary;
-      color: #FFF;
-      margin: auto;
-      padding: 15px;
-      width: 100px;
     }
+    .allergies-wrapper {
+        display: block;
+        margin: 20px 0;
+        text-align: left;
+        .hidden {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .allergy-select {
+            margin: 10px 10px 10px 0;
+            display: inline-block;
+        }
+        input[type="checkbox"] + label {
+            color: $gray;
+            background-color: #FFF;
+            &.btn-greyed {
+                color: $gray-lighter;
+                background-color: $gray;
+            }
+        }
+        input[type="checkbox"]:checked + label {
+            color: #FFF;
+            background-color: $brand-primary;
+            &.btn-greyed {
+                background-color: darken($brand-primary, 30%);
+            }
+        }
+        .btn {
+            padding: 12px;
+            box-shadow: none;
+            background-image: none;
+            text-shadow: none;
+            border: none;
+        }
     }
-    .bottom-link {
-      margin-top: 10px;
-      a {
-        color: #FFF;
-        font-size: 0.9em;
-      }
-    }
-  }
-  .allergies-wrapper {
-    display: block;
-    margin: 20px 0;
-    text-align: left;
-    .hidden {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-    }
-    .allergy-select {
-      margin: 10px 10px 10px 0;
-      display: inline-block;
-    }
-    input[type="checkbox"] + label {
-      color: $gray;
-      background-color: #FFF;
-      &.btn-greyed {
-      color: $gray-lighter;
-      background-color: $gray;
-    }
-    }
-    input[type="checkbox"]:checked + label {
-      color: #FFF;
-      background-color: $brand-primary;
-      &.btn-greyed {
-        background-color: darken($brand-primary, 30%);
-    }
-    }
-    .btn {
-      padding: 12px;
-      box-shadow: none;
-      background-image: none;
-      text-shadow: none;
-      border: none;
-    }
-
-  }
 }
+
 .search-results-container {
-  margin-top: 30px;
-  min-height: 80vh;
-  margin-bottom: 80px;
+    margin-top: 30px;
+    min-height: 80vh;
+    margin-bottom: 80px;
 }
+
 .restaurant-item {
-  border-bottom: 1px solid $gray-lighter;
-  padding: 20px;
-  line-height: 1.8em;
-  .restaurant-item-name {
-    a {
-      color: $brand-primary;
+    border-bottom: 1px solid $gray-lighter;
+    padding: 20px;
+    line-height: 1.8em;
+    .restaurant-item-name {
+        a {
+            color: $brand-primary;
+        }
     }
-  }
-  .restaurant-item-area {
-    text-align: right;
-  }
+    .restaurant-item-area {
+        text-align: right;
+    }
 }
