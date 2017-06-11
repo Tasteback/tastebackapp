@@ -2,20 +2,9 @@
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6">
-<div class="user-form">
-<h2>Add photo to <%= @restaurant.name %></h2>
-<%= form_tag({controller: "restaurants", action: "update"}, {method: "put", multipart: true}) do %>
-<div class="avatar-edit field">
-  <div class="fileUpload">
-    <%= label_tag :photo, "Upload" %>
-  <%= file_field_tag :photo, class: "upload" %>
-  </div>
-  </div>
-
-    <div class="submit-wrapper field">
-  <%= submit_tag "Update", class: "btn btn-large submit-btn"%>
-  </div>  
-<% end %>
+<div class="restaurant-form">
+<h2>Edit <%= @restaurant.name %></h2>
+<%= render 'restaurant_form' %>
 </div>
 </div>
 <div class="col-md-3"></div>

@@ -1,5 +1,7 @@
 require "open-uri"
 class Allergy < ApplicationRecord
+  resourcify 
+  
   validates :name, presence: true
   has_many :dish_allergies
   has_many :dishes, through: :dish_allergies

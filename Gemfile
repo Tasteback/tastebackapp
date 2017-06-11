@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'sprig'
 gem 'mail_form'
 gem 'devise', github: 'plataformatec/devise'
+gem 'cancancan'
+gem 'rolify', github: 'RolifyCommunity/rolify'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

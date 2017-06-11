@@ -39,7 +39,14 @@
   </div>
 
   <%= submit_tag "Find", class: "btn btn-large submit-btn"%>
-  <div class="suggestion-link"><%= link_to "Suggest a restaurant", "https://docs.google.com/a/catlin.edu/forms/d/e/1FAIpQLSen0ZZfoswU9qfFZ97dmd49o7c21rHZJjooX9_jgrTB-QikhQ/viewform"  %></div>
+
+  <% if can? :create, Restaurant %>
+  <div class="bottom-link">
+    <%= link_to "Add Restaurant", new_restaurant_path %>
+  </div>
+  <% else %>
+    <div class="bottom-link"><%= link_to "Suggest a restaurant", "https://docs.google.com/a/catlin.edu/forms/d/e/1FAIpQLSen0ZZfoswU9qfFZ97dmd49o7c21rHZJjooX9_jgrTB-QikhQ/viewform"  %></div>
+  <% end %>
 
 <% end %>
 </div>

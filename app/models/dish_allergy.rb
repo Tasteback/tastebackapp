@@ -1,4 +1,6 @@
 class DishAllergy < ApplicationRecord
+  resourcify 
+  
   validates :allergy_id, presence: true
   validates :dish_id, presence: true
   

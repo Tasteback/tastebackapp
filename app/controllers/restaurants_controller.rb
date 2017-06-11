@@ -47,6 +47,17 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def new 
+    @restaurant = Restaurant.new
+    @dish = Dish.new
+    @allergies = Allergy.all
+
+  end
+
+  def create
+
+  end
+
   def update
     @restaurant = Restaurant.find(edit_params[:id])
     @photo = @restaurant.photos.build(image: edit_params[:photo])

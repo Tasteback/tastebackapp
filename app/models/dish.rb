@@ -1,4 +1,6 @@
 class Dish < ApplicationRecord
+  resourcify 
+  
   validates :name, presence: true
   validates :restaurant_id, presence: true
   belongs_to :restaurant, dependent: :destroy

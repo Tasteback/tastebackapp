@@ -49,8 +49,8 @@
 </div>
 <div class="row">
   <div class="col-md-6 restaurant-details">
-  <% if user_signed_in? %>
-<%= link_to "Add a photo of this restaurant!", edit_restaurant_path(id: @restaurant.id) %>
+  <% if can? :update, @restaurant%>
+<%= link_to "Edit Restaurant", edit_restaurant_path(id: @restaurant.id) %>
 <% end %>
    <div class="review-rating">
     <% @restaurant.average_rating.times do |i| %>

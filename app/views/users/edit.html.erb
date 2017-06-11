@@ -19,11 +19,11 @@
   <div class="allergy-select">
     <% if @user.allergies.include?(a) %>
       <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden", checked: true} %>
-      <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
+      <%= label_tag "allergies[]", a.name, {for: a.name, class: "btn btn-default"}%>
 
     <% else %>
       <%= check_box_tag "allergies[]", a.id, false, {id: a.name, class: "hidden"} %>
-      <%= label_tag "allergies[]", a.name.capitalize, {for: a.name, class: "btn btn-default"}%>
+      <%= label_tag "allergies[]", a.name, {for: a.name, class: "btn btn-default"}%>
     <% end %>
   </div>
   <% end %>
