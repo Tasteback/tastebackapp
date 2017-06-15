@@ -74,13 +74,8 @@
     }
 }
 
-.allergen:not(:last-child) {
-    border-bottom: 1px dotted $gray-lighter;
-}
-
 .allergen {
-    min-height: 120px;
-    padding: 30px;
+    display: inline-block;
     .allergen-name {
         font-weight: bold;
         font-size: 1.2em;
