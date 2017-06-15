@@ -45,22 +45,52 @@ class RestaurantsController < ApplicationController
 
   def edit
     @restaurant = Restaurant.find(params[:id])
+    @allergies = Allergy.all
+    if @restaurant.dishes.nil?
+      @dishes = @restaurant.dishes.build
+    else
+      @dishes = @restaurant.dishes
+    end
   end
 
   def new 
     @restaurant = Restaurant.new
-    @dish = Dish.new
+    @restaurant.dishes.build
     @allergies = Allergy.all
 
   end
 
-  def create
-
-  end
+   def create
+    begin
+       @restaurant = Restaurant.create(name: restaurant_params[:name],
+        cuisine: restaurant_params[:cuisine], 
+        address: restaurant_params[:address],
+        area: restaurant_params[:area],
+        price_range: restaurant_params[:price_range],
+        hours: restaurant_params[:hours], 
+        url: restaurant_params[:url],
+        phone_number: restaurant_params[:phone_number])
+       if restaurant_params[:dishes_attributes]
+         restaurant_params[:dishes_attributes].each do |k, d|
+          @dish = @restaurant.dishes.build(name: d[:name])
+          @dish.save
+          @dish.allergies << Allergy.where(id: d[:allergies]) if d[:allergies]
+         end
+       end
+       @photo = @restaurant.photos.build(image: restaurant_params[:photo]) if restaurant_params[:photo]
+       @photo.save
+       flash[:success] = "Restaurant added."
+       redirect_to @restaurant
+     rescue
+        flash[:failure] = "Adding restaurant failed."
+        redirect_to :root
+     end
+   end
 
   def update
-    @restaurant = Restaurant.find(edit_params[:id])
-    @photo = @restaurant.photos.build(image: edit_params[:photo])
+    @restaurant = Restaurant.find(params[:id])
+    @photo = @restaurant.photos.build(image: restaurant_params[:photo])
+    #TODO
     if @photo.save
       flash[:success] = "Photo added."
       redirect_to @restaurant
@@ -70,9 +100,15 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    Restaurant.find(params[:id]).destroy
+    flash[:success] = "Restaurant deleted"
+    redirect_to :root
+  end
+
   private
-  def edit_params
-    params.permit(:photo, :id)
+  def restaurant_params 
+    params.require(:restaurant).permit(:name, :cuisine, :address, :area, :price_range, :hours, :url, :phone_number, :photo, {dishes_attributes: [:name, allergies: []] })
   end
   def search_params
     params.permit(:location, :distance, :user_allergies, :allergies => [])

@@ -50,8 +50,12 @@
 <div class="row">
   <div class="col-md-6 restaurant-details">
   <% if can? :update, @restaurant%>
-<%= link_to "Edit Restaurant", edit_restaurant_path(id: @restaurant.id) %>
-<% end %>
+  <%= link_to "Edit Restaurant", edit_restaurant_path(id: @restaurant.id) %>
+  <% end %>
+  <% if can? :destroy, @restaurant %>
+  <br>
+  <%= link_to "Delete Restaurant", @restaurant, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <% end %>
    <div class="review-rating">
     <% @restaurant.average_rating.times do |i| %>
       <span class="glyphicon glyphicon-star"></span>

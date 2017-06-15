@@ -1,11 +1,123 @@
 
 <%= form_for(@restaurant) do |f| %>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :name %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :name, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :cuisine %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :cuisine, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :address %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :address, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :area %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :area, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :price_range %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :price_range, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :hours %>
+  </div>
+  <div class="col-md-6">
+    <%= f.text_field :hours, required: true %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :url%>
+  </div>
+  <div class="col-md-6">
+    <%= f.url_field :url %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div class="field row">
+  <div class="col-md-3">
+    <%= f.label :phone_number %>
+  </div>
+  <div class="col-md-6">
+    <%= f.telephone_field :phone_number %>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
 <div class="avatar-edit field">
   <div class="fileUpload">
-    <%= f.label :photo, "Upload" %>
-  <%= f.file_field :photo, class: "upload" %>
+    <%= f.label :photo, "Upload an image" %>
+    <%= f.file_field :photo, class: "upload" %>
   </div>
   </div>
+  <h4>Add dishes</h4>
+  <% i = -1 %>
+  <%= f.nested_fields_for :dishes do |ff| %>
+    <% i += 1 %>
+    <div class="field">
+    <div class="row">
+    <div class="col-md-3">
+      <%= ff.label :name %>
+    </div>
+    <div class='col-md-6'>
+      <%= ff.text_field :name %>
+    </div>
+    <div class="col-md-3"></div>
+    <%= ff.remove_nested_fields_link %>
+    </div>
+    <div class="row">
+      <div class="allergies-wrapper">
+        <% @allergies.each do |a| %>
+        <div class="allergy-select">
+          <% if controller.action_name == 'edit' %>
+            <% if ff.object.allergies.include?(a) %>
+              <%= check_box_tag "restaurant[dishes_attributes][#{i}][allergies][]", a.id, true, {id: "#{a.name}-#{i}"} %>
+            <% else %>
+              <%= check_box_tag "restaurant[dishes_attributes][#{i}][allergies][]", a.id, false, {id: "#{a.name}-#{i}"} %>
+            <% end %> 
+          <% else %>
+            <%= check_box_tag "restaurant[dishes_attributes][#{i}][allergies][]", a.id, false, {id: "#{a.name}-#{i}"} %>
+          <% end %>
+          <%= label_tag "restaurant[dishes_attributes][#{i}][allergies][]", a.name, {for: "#{a.name}-#{i}"}%>
+        </div>
+        <% end %>
+    </div>
+    
+
+    </div>
+
+  <% end %>
+  <%= f.add_nested_fields_link :dishes %>
+
 
     <div class="submit-wrapper field">
   <%= f.submit "Submit", class: "btn btn-large submit-btn"%>

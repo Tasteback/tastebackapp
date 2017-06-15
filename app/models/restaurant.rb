@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
   has_many :dishes
   has_many :reviews
   has_many :photos, as: :imageable
-  accepts_nested_attributes_for  :dishes, allow_destroy: true
+  accepts_nested_attributes_for :dishes, allow_destroy: true
   
   geocoded_by :address
   after_validation :geocode

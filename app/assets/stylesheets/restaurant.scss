@@ -29,6 +29,13 @@
                 text-shadow: none;
                 border: none;
             }
+            .allergies-wrapper {
+                margin: 10px;
+                .allergy-select {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
             .submit-wrapper {
                 margin-left: auto;
                 margin-right: auto;
