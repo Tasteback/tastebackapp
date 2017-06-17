@@ -3,9 +3,9 @@ class Allergy < ApplicationRecord
   resourcify 
   
   validates :name, presence: true
-  has_many :dish_allergies
+  has_many :dish_allergies, dependent: :destroy
   has_many :dishes, through: :dish_allergies
-  has_many :user_allergies
+  has_many :user_allergies, dependent: :destroy
   has_many :users, through: :user_allergies
 
    has_attached_file :icon, styles: { thumb: "80x80>" }, default_url: ":style/missing.png"

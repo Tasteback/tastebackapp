@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require_tree .
-//= require jquery
 //= require nested_form_fields
 

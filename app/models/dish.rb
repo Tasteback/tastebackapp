@@ -3,10 +3,10 @@ class Dish < ApplicationRecord
   
   validates :name, presence: true
   validates :restaurant_id, presence: true
-  belongs_to :restaurant, dependent: :destroy
-  has_many :dish_allergies
+  belongs_to :restaurant
+  has_many :dish_allergies, dependent: :destroy
   has_many :allergies, through: :dish_allergies 
-  has_many :photos, as: :imageable
+  has_many :photos, as: :imageable, dependent: :destroy
 
   scope :restaurant, -> (restaurant_id) { where(restaurant_id: restaurant_id)}
 

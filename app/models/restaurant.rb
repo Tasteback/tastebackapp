@@ -4,9 +4,9 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
 
-  has_many :dishes
-  has_many :reviews
-  has_many :photos, as: :imageable
+  has_many :dishes, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :photos, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :dishes, allow_destroy: true
   
   geocoded_by :address

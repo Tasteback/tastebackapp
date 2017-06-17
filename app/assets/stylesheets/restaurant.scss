@@ -45,12 +45,29 @@
     }
 }
 
+.allergy-container {
+    margin-top: 20px;
+    .allergen {
+    display: inline-block;
+    .allergen-name {
+        font-weight: bold;
+        font-size: 1.2em;
+
+    }
+}
+}
+
 .carousel-container {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
     max-width: 500px;
+    
+    .carousel-inner>.item>img {
+        height: 300px;
+    }
+
     .glyphicon-chevron-right {
         right: 20px;
         color: lighten($gray-base, 60%);
@@ -74,13 +91,7 @@
     }
 }
 
-.allergen {
-    display: inline-block;
-    .allergen-name {
-        font-weight: bold;
-        font-size: 1.2em;
-    }
-}
+
 
 .heading {
     color: $brand-primary;

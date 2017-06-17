@@ -54,7 +54,7 @@
   <% end %>
   <% if can? :destroy, @restaurant %>
   <br>
-  <%= link_to "Delete Restaurant", @restaurant, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <%= link_to "Delete Restaurant", restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you sure?'} %>
   <% end %>
    <div class="review-rating">
     <% @restaurant.average_rating.times do |i| %>
@@ -97,10 +97,16 @@
     <p>Accomodates the following food restrictions:</p>
     <% end %>
   
+  <div class='allergy-container'>
   <div class='row'>
-    <% d.dish_allergies.each do |da| %>
+    <% d.dish_allergies.each_with_index do |da, i| %>
+        <% if i % 6 == 0 %>
+        </div>
+        <div class='row'>
+        <% end %>
         <div class="col-md-2 allergen"><%= image_tag da.allergy.icon.url(:thumb) %><br><span class="allergen-name"><h5><%= da.allergy.name %></h5></span></div>
   <% end %>
+</div>
   </div>
     </div>
     <div class="col-md-1"></div>

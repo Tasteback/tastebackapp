@@ -4,6 +4,6 @@ class Review < ApplicationRecord
   validates :user_id, presence: true
   validates :restaurant_id, presence: true
 
-  belongs_to :restaurant, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  belongs_to :restaurant
+  belongs_to :user
 end

@@ -77,25 +77,56 @@ class RestaurantsController < ApplicationController
           @dish.allergies << Allergy.where(id: d[:allergies]) if d[:allergies]
          end
        end
-       @photo = @restaurant.photos.build(image: restaurant_params[:photo]) if restaurant_params[:photo]
-       @photo.save
+       if restaurant_params[:photo]
+         @photo = @restaurant.photos.build(image: restaurant_params[:photo]) 
+         @photo.save
+       end
        flash[:success] = "Restaurant added."
        redirect_to @restaurant
-     rescue
-        flash[:failure] = "Adding restaurant failed."
-        redirect_to :root
+     rescue Exception => e
+      p e
+      flash[:failure] = "Adding restaurant failed."
+      redirect_to :root
      end
    end
 
   def update
-    @restaurant = Restaurant.find(params[:id])
-    @photo = @restaurant.photos.build(image: restaurant_params[:photo])
-    #TODO
-    if @photo.save
-      flash[:success] = "Photo added."
+
+    begin
+      @restaurant = Restaurant.find(params[:id])
+      @restaurant.update_attributes(name: restaurant_params[:name],
+          cuisine: restaurant_params[:cuisine], 
+          address: restaurant_params[:address],
+          area: restaurant_params[:area],
+          price_range: restaurant_params[:price_range],
+          hours: restaurant_params[:hours], 
+          url: restaurant_params[:url],
+          phone_number: restaurant_params[:phone_number])
+      if restaurant_params[:dishes_attributes]
+         restaurant_params[:dishes_attributes].each do |k, d|
+          if d[:_destroy] ==  "1"
+            @restaurant.dishes.delete(Dish.find(d[:id]))
+          elsif d[:id]
+            @dish = Dish.find(d[:id])
+            @dish.update_attributes(name: d[:name])
+            @dish.save
+            @dish.allergies = Allergy.find(d[:allergies])
+          else
+            @dish = @restaurant.dishes.build(name: d[:name])
+            @dish.save
+            @dish.allergies << Allergy.where(id: d[:allergies]) if d[:allergies]
+          end
+         end
+       end
+     if restaurant_params[:photo]
+        @photo = @restaurant.photos.build(image: restaurant_params[:photo]) 
+        @photo.save
+      end
+      flash[:success] = "Restaurant edited!"
       redirect_to @restaurant
-    else
-      flash[:failure] = "Photo upload failed."
+    rescue Exception => e
+      p e
+      flash[:failure] = "Editing restaurant failed."
       redirect_to @restaurant
     end
   end
@@ -108,7 +139,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params 
-    params.require(:restaurant).permit(:name, :cuisine, :address, :area, :price_range, :hours, :url, :phone_number, :photo, {dishes_attributes: [:name, allergies: []] })
+    params.require(:restaurant).permit(:name, :cuisine, :address, :area, :price_range, :hours, :url, :phone_number, :photo, {dishes_attributes: [:id, :name, :_destroy, allergies: []] })
   end
   def search_params
     params.permit(:location, :distance, :user_allergies, :allergies => [])
