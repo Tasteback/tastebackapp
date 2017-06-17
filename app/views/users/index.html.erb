@@ -1,0 +1,21 @@
+<div class="users-container container">
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+<div class="row">
+  <% @users.each_with_index do |u, i| %>
+    <% if i % 3 == 0 %>
+        </div>
+        <div class='row'>
+        <% end %>
+    <div class="col-md-4 user-row">
+      <%= u.email %>
+      <%= link_to 'Set Role', role_form_path(id: u.id) %>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>
+<div class="col-md-1"></div>
+
+</div>

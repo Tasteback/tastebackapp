@@ -1,4 +1,27 @@
 class UsersController < ApplicationController
+  before_action :check_admin, only: [:index, :role_form, :set_role]
+  def index
+    @users = User.all
+    
+  end
+  def role_form
+    @user = User.find(params[:id])
+    @restaurants = Restaurant.all
+  end
+  def set_role
+    @user = User.find(params[:user_id])
+    @user.remove_role :owner if @user.has_role? :owner
+    @user.remove_role :admin if @user.has_role? :admin
+    if params[:role] == "owner"
+      params[:restaurants].each do |r|
+        @user.add_role :owner, Restaurant.find(r)
+      end
+    elsif params[:role] == "admin"
+      @user.add_role :admin
+    end
+    flash[:success] = "User role updated!"
+    redirect_to admin_path
+  end
   def show
     @user = User.find(params[:id])
   end
@@ -28,5 +51,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.permit(:avatar, :allergies => [])
+  end
+  def check_admin
+    if !user_signed_in? || !current_user.has_role?(:admin)
+      redirect_to :root
+    end
   end
 end

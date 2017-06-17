@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<div class="user-form">
+<h2>Set role for <%= @user.email %></h2>
+<%= form_tag({controller: "users", action: "set_role"}, {method: "post", class: "role-form"}) do %>
+        <div class="field">
+        <%= label_tag 'role_admin', "Set user as admin" %>
+        <%= radio_button_tag 'role', 'admin' %>
+        </div>
+        <div class="field">
+        <%= label_tag 'role_owner', "Set user as restaurant owner" %>
+        <%= radio_button_tag 'role', 'owner' %>
+        </div>
+        <div class="field">
+        <% @restaurants.each do |r| %>
+        <div class='restaurant-row'>
+          <%= label_tag 'restaurants[]', "#{r.name} (#{r.area})", {for: "restaurant-#{r.id}"} %>
+          <%= check_box_tag "restaurants[]", r.id, false, {id: "restaurant-#{r.id}" }%>
+          </div>
+        <% end %>
+        </div>
+        <div class="field">
+        <%= label_tag 'role_newuser', "Set user as normal user" %>
+        <%= radio_button_tag 'role', 'newuser', true %>
+        </div>
+        <%= hidden_field_tag 'user_id', @user.id %>
+        <%= submit_tag "Set role", class: "btn btn-small submit-btn" %>
+      <% end %>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>

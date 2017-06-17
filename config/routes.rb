@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
+  get 'admin', to: 'users#index'
+
+  get 'role_form', to: 'users#role_form'
+
+  post 'set_role', to: 'users#set_role'
 
   match '/contacts', to: 'contacts#new', via: 'get'
 
