@@ -44,6 +44,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    session.delete(:dishes)
     @restaurant = Restaurant.find(params[:id])
     @allergies = Allergy.all
     if @restaurant.dishes.nil?
@@ -54,6 +55,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new 
+    session.delete(:dishes)
     @restaurant = Restaurant.new
     @restaurant.dishes.build
     @allergies = Allergy.all

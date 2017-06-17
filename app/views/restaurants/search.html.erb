@@ -40,7 +40,7 @@
 
   <%= submit_tag "Find", class: "btn btn-large submit-btn"%>
 
-  <% if can? :create, Restaurant %>
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
   <div class="bottom-link">
     <%= link_to "Add Restaurant", new_restaurant_path %>
   </div>

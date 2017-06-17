@@ -49,10 +49,10 @@
 </div>
 <div class="row">
   <div class="col-md-6 restaurant-details">
-  <% if can? :update, @restaurant%>
+  <% if user_signed_in? && can?(:update, @restaurant) %>
   <%= link_to "Edit Restaurant", edit_restaurant_path(id: @restaurant.id) %>
   <% end %>
-  <% if can? :destroy, @restaurant %>
+  <% if user_signed_in? && current_user.has_role?(:admin) %>
   <br>
   <%= link_to "Delete Restaurant", restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you sure?'} %>
   <% end %>

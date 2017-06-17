@@ -6,6 +6,7 @@ class Ability
         can :manage, :all
     else
         can :read, :all
+        can :update, Restaurant, id: Restaurant.with_role(:owner, user).pluck(:id)
     end
     # Define abilities for the passed in user here. For example:
     #
